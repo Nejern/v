@@ -1,9 +1,17 @@
 vim.cmd([[packadd packer.nvim]]) 
     
-return require("packer").startup(function()                            
-        -- Packer can manage itself  
-        use("wbthomason/packer.nvim")
+return require("packer").startup(function()
+	-- Packer can manage itself
+	use("wbthomason/packer.nvim")
 
-        -- Theme
+	-- Theme
         use("sainnhe/gruvbox-material")
+
+	-- Autopairs
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup()
+		end,
+	})
 end)

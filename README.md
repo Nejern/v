@@ -27,3 +27,7 @@ My [Neovim](https://neovim.io/) config
 ### Appearance
 
 - [Gruvbox Material](https://github.com/sainnhe/gruvbox-material)
+
+### Writing
+
+- [Autopairs](https://github.com/windwp/nvim-autopairs)
