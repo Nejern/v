@@ -1,5 +1,7 @@
 # V
 
+My [Neovim](https://neovim.io/) config
+
 ## Plugins list
 
 ### Plugin installer
