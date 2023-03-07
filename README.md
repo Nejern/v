@@ -24,6 +24,6 @@ My [Neovim](https://neovim.io/) config
 
 - [Packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-### Appearancehttps://github.com/Nejern/v
+### Appearance
 
 - [Gruvbox Material](https://github.com/sainnhe/gruvbox-material)
