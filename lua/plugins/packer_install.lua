@@ -29,7 +29,8 @@ return require("packer").startup(function(use)
 		"williamboman/mason.nvim",
 		requires = {
 			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig"
+			"neovim/nvim-lspconfig",
+			"hrsh7th/cmp-nvim-lsp",	-- LSP completion sourc
 			--"nvim-lua/plenary.nvim",
 			--"jose-elias-alvarez/null-ls.nvim",
 			--"jay-babu/mason-null-ls.nvim",
@@ -42,7 +43,9 @@ return require("packer").startup(function(use)
 			require("mason-lspconfig").setup()
 			require("mason-lspconfig").setup_handlers({
 				function(server_name)
-					require("lspconfig")[server_name].setup({})
+					require("lspconfig")[server_name].setup({
+						capabilities = require('cmp_nvim_lsp').default_capabilities()
+					})
 				end,
 				-- Next, you can provide a dedicated handler for specific servers.
 				-- For example, a handler override for the `rust_analyzer`:
@@ -65,8 +68,8 @@ return require("packer").startup(function(use)
 	})
 
 	-- Completion --
-	-- LSP completion source:
-	use "hrsh7th/cmp-nvim-lsp"
+	-- LuaSnip source
+	use "saadparwaiz1/cmp_luasnip"
 	-- Useful completion sources:
 	use "hrsh7th/cmp-nvim-lua"
 	use "hrsh7th/cmp-nvim-lsp-signature-help"

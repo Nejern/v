@@ -37,6 +37,7 @@ My [Neovim](https://neovim.io/) config
 #### Completion/Snippets
 
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
