@@ -8,6 +8,7 @@ require('plugins.packer_install')
 --[[ Options ]]--
 require('base.appearance')	-- Appearance
 require('base.colorscheme')	-- Colorscheme
+require('base.search')		-- Search
 require('base.cursor')		-- Cursor
 require('base.panels')		-- Panels
 require('base.completion')	-- Completion
