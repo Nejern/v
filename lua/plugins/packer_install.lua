@@ -1,6 +1,6 @@
-vim.cmd([[packadd packer.nvim]]) 
+vim.cmd([[packadd packer.nvim]])
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
@@ -54,13 +54,23 @@ return require("packer").startup(function()
 		end,
 	})
 
+
+	use({
+		"L3MON4D3/LuaSnip",
+		-- follow latest release.
+		tag = "v<CurrentMajor>.*",
+		-- install jsregexp (optional!:).
+		run = "make install_jsregexp",
+	})
+
 	-- Completion framework:
 	use({
 		"hrsh7th/nvim-cmp",
-		requires = {
+		config = function()
 			require("plugins.cmp")
-		},
+		end,
 	})
+
 	-- LSP completion source:
 	use "hrsh7th/cmp-nvim-lsp"
 	-- Useful completion sources:
