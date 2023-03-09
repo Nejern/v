@@ -7,7 +7,3 @@
 -- updatetime: set updatetime for CursorHold
 opt.completeopt = {'menuone', 'noselect', 'noinsert'}
 opt.shortmess = vim.opt.shortmess + { c = true}
-
-vim.cmd([[
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]])

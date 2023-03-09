@@ -9,4 +9,5 @@ require('plugins.packer_install')
 require('base.appearance')	-- Appearance
 require('base.colorscheme')	-- Colorscheme
 require('base.completion')	-- Completion
+require('base.diagnostic')	-- Diagnostic
 require('base.other')		-- Other
