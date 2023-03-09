@@ -4,8 +4,11 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
+  -- filetype.vim replacement
+  use("nathom/filetype.nvim")
+
 	-- Theme
-        use("sainnhe/gruvbox-material")
+  use("sainnhe/gruvbox-material")
 
 	-- Autopairs
 	use({
