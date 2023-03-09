@@ -53,4 +53,7 @@ return require("packer").startup(function()
 			require("plugins.lspconfig")
 		end,
 	})
+
+	-- GLSL syntax highlighting
+	use("tikhomirov/vim-glsl")
 end)
