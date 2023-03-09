@@ -55,6 +55,7 @@ return require("packer").startup(function(use)
 	})
 
 
+	-- LuaSnip
 	use({
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
@@ -63,6 +64,18 @@ return require("packer").startup(function(use)
 		run = "make install_jsregexp",
 	})
 
+	-- Completion --
+	-- LSP completion source:
+	use "hrsh7th/cmp-nvim-lsp"
+	-- Useful completion sources:
+	use "hrsh7th/cmp-nvim-lua"
+	use "hrsh7th/cmp-nvim-lsp-signature-help"
+	use "hrsh7th/cmp-path"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-cmdline"
+	--use "hrsh7th/cmp-vsnip"
+	--use "hrsh7th/vim-vsnip"
+
 	-- Completion framework:
 	use({
 		"hrsh7th/nvim-cmp",
@@ -70,14 +83,4 @@ return require("packer").startup(function(use)
 			require("plugins.cmp")
 		end,
 	})
-
-	-- LSP completion source:
-	use "hrsh7th/cmp-nvim-lsp"
-	-- Useful completion sources:
-	use "hrsh7th/cmp-nvim-lua"
-	use "hrsh7th/cmp-nvim-lsp-signature-help"
-	use "hrsh7th/cmp-vsnip"
-	use "hrsh7th/cmp-path"
-	use "hrsh7th/cmp-buffer"
-	use "hrsh7th/vim-vsnip"
 end)
