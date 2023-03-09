@@ -5,7 +5,12 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 
   -- filetype.vim replacement
-  use("nathom/filetype.nvim")
+  use({
+    "nathom/filetype.nvim",
+    config = function()
+      require('plugins.filetype')
+    end
+  })
 
 	-- Theme
   use("sainnhe/gruvbox-material")
