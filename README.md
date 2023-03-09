@@ -37,6 +37,7 @@ My [Neovim](https://neovim.io/) config
 ### Writing
 
 - [Autopairs](https://github.com/windwp/nvim-autopairs)
+- [rust-tools.nvim](https://github/simrat39/rust-tools.nvim)
 
 #### Completion/Snippets
 

@@ -4,16 +4,16 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-  -- filetype.vim replacement
-  use({
-    "nathom/filetype.nvim",
-    config = function()
-      require('plugins.filetype')
-    end
-  })
+	-- filetype.vim replacement
+	use({
+		"nathom/filetype.nvim",
+		config = function()
+			require('plugins.filetype')
+		end
+	})
 
 	-- Theme
-  use("sainnhe/gruvbox-material")
+	use("sainnhe/gruvbox-material")
 
 	-- Autopairs
 	use({
@@ -32,13 +32,16 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- rust-tools
+	use "simrat39/rust-tools.nvim"
+
 	-- LSP
 	use({
 		"williamboman/mason.nvim",
 		requires = {
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
-			"hrsh7th/cmp-nvim-lsp",	-- LSP completion sourc
+			"hrsh7th/cmp-nvim-lsp", -- LSP completion source
 			--"nvim-lua/plenary.nvim",
 			--"jose-elias-alvarez/null-ls.nvim",
 			--"jay-babu/mason-null-ls.nvim",
@@ -46,7 +49,7 @@ return require("packer").startup(function(use)
 		config = function()
 			require("mason").setup()
 			--require("mason-null-ls").setup({
-				--automatic_setup = true,
+			--automatic_setup = true,
 			--})
 			require("mason-lspconfig").setup()
 			require("mason-lspconfig").setup_handlers({
@@ -57,9 +60,9 @@ return require("packer").startup(function(use)
 				end,
 				-- Next, you can provide a dedicated handler for specific servers.
 				-- For example, a handler override for the `rust_analyzer`:
-				--["rust_analyzer"] = function ()
-				--  require("rust-tools").setup {}
-				--end
+						["rust_analyzer"] = function()
+					require("rust-tools").setup {}
+				end
 			})
 			require("plugins.lspconfig")
 		end,
