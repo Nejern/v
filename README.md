@@ -49,3 +49,7 @@ My [Neovim](https://neovim.io/) config
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
+
+#### Syntax
+
+- [vim-glsl](https://github.com/tikhomirov/vim-glsl)
