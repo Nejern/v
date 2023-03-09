@@ -16,3 +16,6 @@ require('base.tabs')          -- Tabs
 require('base.completion')    -- Completion
 require('base.diagnostic')    -- Diagnostic
 require('base.other')         -- Other
+
+--[[ Hotkeys ]]--
+require('keys.plugins')
