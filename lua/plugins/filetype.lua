@@ -11,29 +11,29 @@ require("filetype").setup({
 		},
 		complex = {
 			-- Set the filetype of any full filename matching the regex to gitconfig
-					[".*git/config"] = "gitconfig", -- Included in the plugin
+			[".*git/config"] = "gitconfig", -- Included in the plugin
 		},
 		-- The same as the ones above except the keys map to functions
 		function_extensions = {
-					["cpp"] = function()
+			["cpp"] = function()
 				vim.bo.filetype = "cpp"
 				-- Remove annoying indent jumping
 				vim.bo.cinoptions = vim.bo.cinoptions .. "L0"
 			end,
-					["pdf"] = function()
+			["pdf"] = function()
 				vim.bo.filetype = "pdf"
 				-- Open in PDF viewer (Skim.app) automatically
 				--vim.fn.jobstart(
 				--  "open -a skim " .. '"' .. vim.fn.expand("%") .. '"'
 				--)
 			end,
-					["lua"] = function()
+			["lua"] = function()
 				vim.bo.filetype = "lua"
 				opt.expandtab = false
 				opt.tabstop = 2
 				opt.shiftwidth = 2
 			end,
-					["rs"] = function()
+			["rs"] = function()
 				vim.bo.filetype = "rust"
 				opt.expandtab = true
 				opt.tabstop = 4
@@ -46,7 +46,7 @@ require("filetype").setup({
 			end,
 		},
 		function_complex = {
-					["*.math_notes/%w+"] = function()
+			["*.math_notes/%w+"] = function()
 				vim.cmd("iabbrev $ $$")
 			end,
 		},

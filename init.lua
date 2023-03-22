@@ -1,21 +1,21 @@
---[[ Variables ]]--
+-- [[ Variables ]] --
 opt = vim.opt
 g = vim.g
 
---[[ Plugins ]]--
+-- [[ Plugins ]] --
 require('plugins.packer_install')
 
---[[ Options ]]--
-require('base.appearance')    -- Appearance
-require('base.colorscheme')   -- Colorscheme
-require('base.search')        -- Search
-require('base.cursor')        -- Cursor
-require('base.window')        -- Window
-require('base.panels')        -- Panels
-require('base.tabs')          -- Tabs
-require('base.completion')    -- Completion
-require('base.diagnostic')    -- Diagnostic
-require('base.other')         -- Other
+-- [[ Options ]] --
+require('base.appearance')  -- Appearance
+require('base.colorscheme') -- Colorscheme
+require('base.search')      -- Search
+require('base.cursor')      -- Cursor
+require('base.window')      -- Window
+require('base.panels')      -- Panels
+require('base.tabs')        -- Tabs
+require('base.completion')  -- Completion
+require('base.diagnostic')  -- Diagnostic
+require('base.other')       -- Other
 
---[[ Hotkeys ]]--
+-- [[ Hotkeys ]] --
 require('keys.plugins')

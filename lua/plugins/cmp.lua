@@ -14,20 +14,20 @@ cmp.setup({
 	-- Mapping
 	mapping = {
 		-- Select prev completion
-				['<C-p>'] = cmp.mapping.select_prev_item(),
-				['<S-Tab>'] = cmp.mapping.select_prev_item(),
+		['<C-p>'] = cmp.mapping.select_prev_item(),
+		['<S-Tab>'] = cmp.mapping.select_prev_item(),
 		-- Select next completion
-				['<C-n>'] = cmp.mapping.select_next_item(),
-				['<Tab>'] = cmp.mapping.select_next_item(),
+		['<C-n>'] = cmp.mapping.select_next_item(),
+		['<Tab>'] = cmp.mapping.select_next_item(),
 		-- Scroll docs
-				['<C-b>'] = cmp.mapping.scroll_docs(-4),
-				['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		-- Complete
-				['<C-Space>'] = cmp.mapping.complete(),
+		['<C-Space>'] = cmp.mapping.complete(),
 		-- Close
-				['<C-e>'] = cmp.mapping.close(),
+		['<C-e>'] = cmp.mapping.close(),
 		-- Confirm
-				['<C-y>'] = cmp.mapping.confirm({
+		['<C-y>'] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Insert,
 			select = true,
 		})
