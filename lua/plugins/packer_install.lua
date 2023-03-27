@@ -12,6 +12,14 @@ return require("packer").startup(function(use)
 		end
 	})
 
+	-- filetype.vim replacement
+	use({
+		"xiyaowong/transparent.nvim",
+		config = function()
+			require('plugins.transparent')
+		end
+	})
+
 	-- Theme
 	use("sainnhe/gruvbox-material")
 
@@ -89,8 +97,6 @@ return require("packer").startup(function(use)
 	use "hrsh7th/cmp-path"
 	use "hrsh7th/cmp-buffer"
 	use "hrsh7th/cmp-cmdline"
-	--use "hrsh7th/cmp-vsnip"
-	--use "hrsh7th/vim-vsnip"
 
 	-- Completion framework:
 	use({
