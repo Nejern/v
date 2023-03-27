@@ -31,8 +31,9 @@ My [Neovim](https://neovim.io/) config
 ### Appearance
 
 - [Gruvbox Material](https://github.com/sainnhe/gruvbox-material)
-- [lualine.nvim](nvim-lualine/lualine.nvim)
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [Nvim-web-devicons](kyazdani42/nvim-web-devicons)
+- [nvim-transparent](https://github.com/xiyaowong/transparent.nvim)
 
 ### Writing
 
