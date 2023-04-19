@@ -6,6 +6,7 @@ g = vim.g
 require('plugins.packer_install')
 
 -- [[ Options ]] --
+require('base.filetype')    -- Filetype
 require('base.appearance')  -- Appearance
 require('base.colorscheme') -- Colorscheme
 require('base.search')      -- Search

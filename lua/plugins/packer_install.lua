@@ -4,15 +4,7 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	-- filetype.vim replacement
-	use({
-		"nathom/filetype.nvim",
-		config = function()
-			require('plugins.filetype')
-		end
-	})
-
-	-- filetype.vim replacement
+	-- Transparent window
 	use({
 		"xiyaowong/transparent.nvim",
 		config = function()
