@@ -23,6 +23,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Numbertoggle
+	use("jeffkreeftmeijer/vim-numbertoggle")
+
 	-- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",

@@ -34,6 +34,8 @@ My [Neovim](https://neovim.io/) config
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [Nvim-web-devicons](kyazdani42/nvim-web-devicons)
 - [nvim-transparent](https://github.com/xiyaowong/transparent.nvim)
+- [Numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle)
+
 
 ### Writing
 
