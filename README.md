@@ -1,4 +1,4 @@
-# V
+# v
 
 My [Neovim](https://neovim.io/) config
 
@@ -7,12 +7,16 @@ My [Neovim](https://neovim.io/) config
 > Unix, Linux
 
 1. Clone a repo to config folder
+
 	```
 	cd ~/.config
 	git clone https://github.com/Nejern/v nvim
 	```
 
-2. In Neovim command mode write
+2. Install [Packer.nvim](https://github.com/wbthomason/packer.nvim)
+
+3. In Neovim command mode write
+
 	```
 	PackInstall
 	PackCompile
