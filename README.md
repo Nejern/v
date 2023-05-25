@@ -44,15 +44,17 @@ My [Neovim](https://neovim.io/) config
 
 #### Completion/Snippets
 
+- [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
 - [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
+- [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
 #### Syntax
 

@@ -43,6 +43,7 @@ cmp.setup({
 				--get_cwd = function(); -- Default returns the current working directory of the current buffer
 			}
 		},
+		{ name = 'copilot', },                                 -- from language server
 		{ name = 'nvim_lsp',               keyword_length = 3 }, -- from language server
 		{ name = 'nvim_lsp_signature_help' },                  -- display function signatures with current parameter emphasized
 		{ name = 'nvim_lua',               keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
@@ -74,6 +75,7 @@ cmp.setup({
 				luasnip = '⋗',
 				buffer = 'Ω',
 				path = '🖫',
+				copilot = '',
 			}
 			item.menu = menu_icon[entry.source.name]
 			return item

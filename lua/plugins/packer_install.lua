@@ -74,6 +74,16 @@ return require("packer").startup(function(use)
 	-- GLSL syntax highlighting
 	use("tikhomirov/vim-glsl")
 
+	-- Copilot
+	use({
+		"zbirenbaum/copilot.lua",
+		--cmd = "Copilot",
+		--event = "InsertEnter",
+		config = function()
+			require("copilot").setup()
+		end,
+	})
+
 	-- LuaSnip
 	use({
 		"L3MON4D3/LuaSnip",
@@ -86,6 +96,14 @@ return require("packer").startup(function(use)
 	-- Completion --
 	-- LuaSnip source
 	use "saadparwaiz1/cmp_luasnip"
+	-- Copilot source
+	use({
+		"zbirenbaum/copilot-cmp",
+		after = { "copilot.lua" },
+		config = function()
+			require("copilot_cmp").setup()
+		end
+	})
 	-- Useful completion sources:
 	use "hrsh7th/cmp-nvim-lua"
 	use "hrsh7th/cmp-nvim-lsp-signature-help"
