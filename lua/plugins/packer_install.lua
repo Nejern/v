@@ -90,7 +90,7 @@ return require("packer").startup(function(use)
 		-- follow latest release.
 		tag = "v<CurrentMajor>.*",
 		-- install jsregexp (optional!:).
-		run = "make install_jsregexp",
+		-- run = "make install_jsregexp",
 	})
 
 	-- Completion --
