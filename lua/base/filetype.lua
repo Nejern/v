@@ -25,5 +25,11 @@ vim.filetype.add({
       opt.shiftwidth = 4
       return "rust"
     end,
+    ["nginx"] = function()
+      opt.expandtab = true
+      opt.tabstop = 2
+      opt.shiftwidth = 2
+      return "nginx"
+    end,
   },
 })
