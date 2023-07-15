@@ -28,10 +28,6 @@ My [Neovim](https://neovim.io/) config
 
 - [Packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-### Optimization
-
-- [filetype.nvim](https://github.com/nathom/filetype.nvim)
-
 ### Appearance
 
 - [Gruvbox Material](https://github.com/sainnhe/gruvbox-material)
