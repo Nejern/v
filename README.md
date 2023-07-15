@@ -63,3 +63,7 @@ My [Neovim](https://neovim.io/) config
 #### Syntax
 
 - [vim-glsl](https://github.com/tikhomirov/vim-glsl)
+
+### Some stuff
+
+- [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim)

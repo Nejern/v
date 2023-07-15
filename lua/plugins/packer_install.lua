@@ -35,6 +35,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- suda.vim
+	use "lambdalisue/suda.vim"
+
 	-- rust-tools
 	use "simrat39/rust-tools.nvim"
 
