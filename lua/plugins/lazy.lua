@@ -56,14 +56,30 @@ require("lazy").setup({
       require("plugins.treesitter")
     end,
   },
-  { -- LuaSnip
-    "L3MON4D3/LuaSnip",
+
+  -- Completion --
+  { -- Completion framework:
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      { -- LuaSnip source
+        "saadparwaiz1/cmp_luasnip",
+        dependencies = { "L3MON4D3/LuaSnip" },
+      },
+      -- Useful completion sources:
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline",
+    },
+    config = function()
+      require("plugins.cmp")
+    end,
   },
 
   -- LSP --
   { -- Mason
     "williamboman/mason.nvim",
-    lazy = false,
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
@@ -91,23 +107,6 @@ require("lazy").setup({
         end
       })
       require("plugins.lspconfig")
-    end,
-  },
-
-  -- Completion --
-  { -- LuaSnip source
-    "saadparwaiz1/cmp_luasnip"
-  },
-  -- Useful completion sources:
-  { "hrsh7th/cmp-nvim-lua" },
-  { "hrsh7th/cmp-nvim-lsp-signature-help" },
-  { "hrsh7th/cmp-path" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-cmdline" },
-  { -- Completion framework:
-    "hrsh7th/nvim-cmp",
-    config = function()
-      require("plugins.cmp")
     end,
   },
 })
