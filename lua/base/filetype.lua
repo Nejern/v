@@ -13,7 +13,7 @@ vim.filetype.add({
     end,
     -- [[ Lua ]] --
     ["lua"] = function()
-      opt.expandtab = false
+      opt.expandtab = true
       opt.tabstop = 2
       opt.shiftwidth = 2
       return "lua"
@@ -25,11 +25,19 @@ vim.filetype.add({
       opt.shiftwidth = 4
       return "rust"
     end,
-    ["nginx"] = function()
+    -- [[ Go ]] --
+    ["go"] = function()
       opt.expandtab = true
       opt.tabstop = 2
       opt.shiftwidth = 2
-      return "nginx"
+      return "go"
+    end,
+    -- [[ HTML ]] --
+    ["html"] = function()
+      opt.expandtab = true
+      opt.tabstop = 4
+      opt.shiftwidth = 4
+      return "html"
     end,
   },
 })
