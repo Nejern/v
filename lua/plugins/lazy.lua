@@ -52,6 +52,9 @@ require("lazy").setup({
   { -- TreeSitter
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    config = function()
+      require("plugins.treesitter")
+    end,
   },
   { -- LuaSnip
     "L3MON4D3/LuaSnip",
