@@ -1,50 +1,67 @@
-vim.cmd([[packadd packer.nvim]])
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+opt.rtp:prepend(lazypath)
 
-return require("packer").startup(function(use)
-  -- Packer can manage itself
-  use("wbthomason/packer.nvim")
-
-  -- Transparent window
-  use({
+-- Setup plugins
+require("lazy").setup({
+  { -- Theme
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+  },
+  { -- Transparent window
     "xiyaowong/transparent.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       require('plugins.transparent')
-    end
-  })
-
-  -- Theme
-  use("sainnhe/gruvbox-material")
-
-  -- Autopairs
-  use({
+    end,
+  },
+  { -- Autopairs
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup()
     end,
-  })
-
-  -- Numbertoggle
-  use("jeffkreeftmeijer/vim-numbertoggle")
-
-  -- Statusline
-  use({
+  },
+  { -- Numbertoggle
+    "jeffkreeftmeijer/vim-numbertoggle",
+  },
+  { -- Statusline
     "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    dependencies = { "kyazdani42/nvim-web-devicons" },
     config = function()
       require("plugins.lualine")
     end,
-  })
+  },
+  { -- Sudo interactions
+    "lambdalisue/suda.vim",
+  },
+  { -- rust-tools
+    "simrat39/rust-tools.nvim",
+  },
+  { -- TreeSitter
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+  { -- LuaSnip
+    "L3MON4D3/LuaSnip",
+  },
 
-  -- suda.vim
-  use "lambdalisue/suda.vim"
-
-  -- rust-tools
-  use "simrat39/rust-tools.nvim"
-
-  -- LSP
-  use({
+  -- LSP --
+  { -- Mason
     "williamboman/mason.nvim",
-    requires = {
+    lazy = false,
+    dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
       "hrsh7th/cmp-nvim-lsp", -- LSP completion source
@@ -72,53 +89,22 @@ return require("packer").startup(function(use)
       })
       require("plugins.lspconfig")
     end,
-  })
-
-  -- GLSL syntax highlighting
-  use("tikhomirov/vim-glsl")
-
-  -- Copilot
-  use({
-    "zbirenbaum/copilot.lua",
-    --cmd = "Copilot",
-    --event = "InsertEnter",
-    config = function()
-      require("copilot").setup()
-    end,
-  })
-
-  -- LuaSnip
-  use({
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    tag = "v<CurrentMajor>.*",
-    -- install jsregexp (optional!:).
-    -- run = "make install_jsregexp",
-  })
+  },
 
   -- Completion --
-  -- LuaSnip source
-  use "saadparwaiz1/cmp_luasnip"
-  -- Copilot source
-  use({
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup()
-    end
-  })
+  { -- LuaSnip source
+    "saadparwaiz1/cmp_luasnip"
+  },
   -- Useful completion sources:
-  use "hrsh7th/cmp-nvim-lua"
-  use "hrsh7th/cmp-nvim-lsp-signature-help"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-cmdline"
-
-  -- Completion framework:
-  use({
+  { "hrsh7th/cmp-nvim-lua" },
+  { "hrsh7th/cmp-nvim-lsp-signature-help" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-cmdline" },
+  { -- Completion framework:
     "hrsh7th/nvim-cmp",
     config = function()
       require("plugins.cmp")
     end,
-  })
-end)
+  },
+})

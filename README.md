@@ -44,7 +44,6 @@ My [Neovim](https://neovim.io/) config
 
 #### Completion/Snippets
 
-- [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
@@ -54,11 +53,10 @@ My [Neovim](https://neovim.io/) config
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
-- [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
 #### Syntax
 
-- [vim-glsl](https://github.com/tikhomirov/vim-glsl)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ### Some stuff
 

@@ -3,7 +3,7 @@ opt = vim.opt
 g = vim.g
 
 -- [[ Plugins ]] --
-require('plugins.packer_install')
+require('plugins.lazy')
 
 -- [[ Options ]] --
 require('base.filetype')    -- Filetype
