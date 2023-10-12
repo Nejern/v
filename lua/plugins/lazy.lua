@@ -83,16 +83,19 @@ require("lazy").setup({
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
-      "hrsh7th/cmp-nvim-lsp", -- LSP completion source
-      --"nvim-lua/plenary.nvim",
-      --"jose-elias-alvarez/null-ls.nvim",
-      --"jay-babu/mason-null-ls.nvim",
+      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      require("mason").setup()
-      --require("mason-null-ls").setup({
-      --automatic_setup = true,
-      --})
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "",
+            package_pending = "",
+            package_uninstalled = "",
+          },
+          border = "rounded",
+        }
+      })
       require("mason-lspconfig").setup()
       require("mason-lspconfig").setup_handlers({
         function(server_name)
