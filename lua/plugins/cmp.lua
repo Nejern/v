@@ -6,11 +6,6 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body) -- LuaSnip
     end,
   },
-  -- Window options
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
   -- Mapping
   mapping = {
     -- Select prev completion
@@ -34,22 +29,18 @@ cmp.setup({
   },
   -- Sources
   sources = {
-    -- file paths
-    {
-      name = 'path',
-      option = {
-        trailing_slash = false,       -- Default false
-        label_trailing_slash = false, -- Default false
-        --get_cwd = function(); -- Default returns the current working directory of the current buffer
-      }
-    },
-    { name = 'copilot', },                                   -- from language server
+    { name = 'path', },                                      -- file paths
     { name = 'nvim_lsp',               keyword_length = 3 }, -- from language server
     { name = 'nvim_lsp_signature_help' },                    -- display function signatures with current parameter emphasized
     { name = 'nvim_lua',               keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
     { name = 'buffer',                 keyword_length = 2 }, -- source current buffer
-    { name = 'calc' },                                       -- source for math calculation
     { name = 'luasnip',                keyword_length = 2 }, -- nvim-cmp source for LuaSnip
+    { name = 'calc' },                                       -- source for math calculation
+  },
+  -- Window options
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   -- Use buffer source for `/` and `?` (if enabled `native_menu`, this won't work anymore)
   cmp.setup.cmdline({ '/', '?' }, {
@@ -75,7 +66,6 @@ cmp.setup({
         luasnip = '⋗',
         buffer = 'Ω',
         path = '🖫',
-        copilot = '',
       }
       item.menu = menu_icon[entry.source.name]
       return item
@@ -111,7 +101,6 @@ local lsp_attach = function(client, buf)
   vim.api.nvim_buf_set_option(buf, "tagfunc", "v:lua.vim.lsp.tagfunc")
 end
 
--- Setup rust_analyzer via rust-tools.nvim
 require("rust-tools").setup({
   server = {
     capabilities = capabilities,
