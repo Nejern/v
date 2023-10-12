@@ -47,6 +47,8 @@ require("lazy").setup({
         "saadparwaiz1/cmp_luasnip",
         dependencies = { "L3MON4D3/LuaSnip" },
       },
+      -- LSP completion source
+      "hrsh7th/cmp-nvim-lsp",
       -- Useful completion sources:
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-nvim-lsp-signature-help",
@@ -71,32 +73,8 @@ require("lazy").setup({
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
-      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      require("mason").setup({
-        ui = {
-          icons = {
-            package_installed = "",
-            package_pending = "",
-            package_uninstalled = "",
-          },
-          border = "rounded",
-        }
-      })
-      require("mason-lspconfig").setup()
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          require("lspconfig")[server_name].setup({
-            capabilities = require('cmp_nvim_lsp').default_capabilities()
-          })
-        end,
-        -- Next, you can provide a dedicated handler for specific servers.
-        -- For example, a handler override for the `rust_analyzer`:
-        ["rust_analyzer"] = function()
-          require("rust-tools").setup {}
-        end
-      })
       require("plugins.lspconfig")
     end,
   },
