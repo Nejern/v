@@ -25,7 +25,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      require('plugins.transparent')
+      require("plugins.transparent")
     end,
   },
   { -- Statusline
@@ -66,18 +66,21 @@ require("lazy").setup({
       require("nvim-autopairs").setup()
     end,
   },
+  {
+    "tpope/vim-surround",
+  },
 
   -- LSP --
   { -- Mason
-    "williamboman/mason.nvim",
-    dependencies = {
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-    },
-    config = function()
-      require("plugins.lspconfig")
-    end,
+  "williamboman/mason.nvim",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
   },
+  config = function()
+    require("plugins.lspconfig")
+  end,
+},
 
   -- Syntax highlighting
   { -- TreeSitter
