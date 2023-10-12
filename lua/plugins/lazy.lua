@@ -41,6 +41,13 @@ require("lazy").setup({
   { -- Highlighting word uses
     "RRethy/vim-illuminate",
   },
+  { -- Todo comments
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function ()
+      require("plugins.todo-comments")
+    end
+  },
 
   -- Completion --
   { -- Completion framework:

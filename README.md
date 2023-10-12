@@ -27,6 +27,7 @@ My [Neovim](https://neovim.io/) config
 - [nvim-transparent](https://github.com/xiyaowong/transparent.nvim)
 - [Numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle)
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [Todo Comments](https://github.com/folke/todo-comments.nvim)
 
 ### Writing
 
