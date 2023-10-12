@@ -52,3 +52,4 @@ My [Neovim](https://neovim.io/) config
 ### Some stuff
 
 - [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim)
+- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
