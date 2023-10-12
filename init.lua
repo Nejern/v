@@ -1,3 +1,6 @@
+-- Speed up loading
+vim.loader.enable()
+
 -- [[ Variables ]] --
 opt = vim.opt
 g = vim.g
