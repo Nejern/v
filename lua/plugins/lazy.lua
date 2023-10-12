@@ -14,6 +14,7 @@ opt.rtp:prepend(lazypath)
 
 -- Setup plugins
 require("lazy").setup({
+  -- Appearance --
   { -- Theme
     "sainnhe/gruvbox-material",
     lazy = false,
@@ -27,15 +28,6 @@ require("lazy").setup({
       require('plugins.transparent')
     end,
   },
-  { -- Autopairs
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup()
-    end,
-  },
-  { -- Numbertoggle
-    "jeffkreeftmeijer/vim-numbertoggle",
-  },
   { -- Statusline
     "nvim-lualine/lualine.nvim",
     dependencies = { "kyazdani42/nvim-web-devicons" },
@@ -43,18 +35,8 @@ require("lazy").setup({
       require("plugins.lualine")
     end,
   },
-  { -- Sudo interactions
-    "lambdalisue/suda.vim",
-  },
-  { -- rust-tools
-    "simrat39/rust-tools.nvim",
-  },
-  { -- TreeSitter
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("plugins.treesitter")
-    end,
+  { -- Numbertoggle
+    "jeffkreeftmeijer/vim-numbertoggle",
   },
 
   -- Completion --
@@ -74,6 +56,12 @@ require("lazy").setup({
     },
     config = function()
       require("plugins.cmp")
+    end,
+  },
+  { -- Autopairs
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup()
     end,
   },
 
@@ -112,4 +100,22 @@ require("lazy").setup({
       require("plugins.lspconfig")
     end,
   },
+
+  -- Syntax highlighting
+  { -- TreeSitter
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("plugins.treesitter")
+    end,
+  },
+
+  -- Other --
+  { -- Sudo interactions
+    "lambdalisue/suda.vim",
+  },
+  { -- rust-tools
+    "simrat39/rust-tools.nvim",
+  },
+
 })
