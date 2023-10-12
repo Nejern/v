@@ -38,6 +38,9 @@ require("lazy").setup({
   { -- Numbertoggle
     "jeffkreeftmeijer/vim-numbertoggle",
   },
+  { -- Highlighting word uses
+    "RRethy/vim-illuminate",
+  },
 
   -- Completion --
   { -- Completion framework:
@@ -72,15 +75,15 @@ require("lazy").setup({
 
   -- LSP --
   { -- Mason
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    config = function()
+      require("plugins.lspconfig")
+    end,
   },
-  config = function()
-    require("plugins.lspconfig")
-  end,
-},
 
   -- Syntax highlighting
   { -- TreeSitter
@@ -98,7 +101,7 @@ require("lazy").setup({
   { -- rust-tools
     "simrat39/rust-tools.nvim",
   },
-  {
+  { -- Terminal window
     "voldikss/vim-floaterm",
   },
 })

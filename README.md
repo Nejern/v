@@ -1,4 +1,4 @@
-# v
+﻿# v
 
 My [Neovim](https://neovim.io/) config
 
@@ -26,7 +26,7 @@ My [Neovim](https://neovim.io/) config
 - [Nvim-web-devicons](kyazdani42/nvim-web-devicons)
 - [nvim-transparent](https://github.com/xiyaowong/transparent.nvim)
 - [Numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle)
-
+- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
 ### Writing
 
