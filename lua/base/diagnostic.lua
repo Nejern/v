@@ -1,12 +1,27 @@
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
+
+sign({ name = 'DiagnosticSignError', text = '' })
+sign({ name = 'DiagnosticSignWarn', text = '' })
+sign({ name = 'DiagnosticSignHint', text = '' })
+sign({ name = 'DiagnosticSignInfo', text = '' })
+
 vim.diagnostic.config({
-  --virtual_text = {
-  --source = "if_many",  -- Or "always"
-  --prefix = '●', -- Could be '■', '▎', 'x'
-  --},
   virtual_text = false,
-  severity_sort = true,
+  signs = true,
+  update_in_insert = true,
+  underline = true,
+  severity_sort = false,
   float = {
-    source = "if_many", -- Or "always"
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
   },
 })
 
