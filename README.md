@@ -13,20 +13,11 @@ My [Neovim](https://neovim.io/) config
 	git clone https://github.com/Nejern/v nvim
 	```
 
-2. Install [Packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-3. In Neovim command mode write
-
-	```
-	PackInstall
-	PackCompile
-	```
-
 ## Plugins list
 
 ### Plugin installer
 
-- [Packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Appearance
 
