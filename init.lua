@@ -1,6 +1,10 @@
 -- Speed up loading
 vim.loader.enable()
 
+-- Don't load netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- [[ Variables ]] --
 opt = vim.opt
 g = vim.g
