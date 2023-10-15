@@ -108,6 +108,19 @@ require("lazy").setup(
     { -- rust-tools
       "simrat39/rust-tools.nvim",
     },
+    { -- Rust crates support
+      "saecki/crates.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("crates").setup({
+          src = {
+            cmp = {
+              enabled = true,
+            },
+          },
+        })
+      end,
+    },
     { -- Terminal window
       "voldikss/vim-floaterm",
     },
