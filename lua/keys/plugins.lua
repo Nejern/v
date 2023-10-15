@@ -10,5 +10,8 @@ nm('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')        -- Rename object
 
 -- FloaTerm configuration
 --nm('<leader>t', ':FloatermNew --name=myfloat --height=0.8 --width=0.7 --autoclose=2 zsh <CR>')
-nm('<leader>t', ':FloatermToggle myfloat<CR>')
+nm('<leader>t', '<cmd>FloatermToggle myfloat<CR>')
 tm('<Esc>', '<C-\\><C-n>:q<CR>')
+
+-- nvim-tree
+nm('<C-w>t', '<cmd>NvimTreeToggle<CR>')
