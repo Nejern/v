@@ -9,6 +9,16 @@ require("mason").setup({
   }
 })
 
+-- mason-null-ls
+require("mason-null-ls").setup({
+  handlers = {},
+})
+
+-- mason-dap
+require("mason-nvim-dap").setup({
+  handlers = {},
+})
+
 require("mason-lspconfig").setup({
   ensure_installed = {},
   automatic_installation = true,

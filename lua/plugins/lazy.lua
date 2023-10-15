@@ -96,6 +96,13 @@ require("lazy").setup(
             require("plugins.null-ls")
           end,
         },
+        { -- DAP
+          "jay-babu/mason-nvim-dap.nvim",
+          dependencies = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-dap",
+          },
+        },
       },
       config = function()
         require("plugins.lspconfig")
