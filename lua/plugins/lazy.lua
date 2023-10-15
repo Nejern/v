@@ -122,6 +122,10 @@ require("lazy").setup(
         require("nvim-tree").setup {}
       end,
     },
+    {
+      "folke/trouble.nvim",
+      dependencies = { "kyazdani42/nvim-web-devicons" },
+    },
   },
   { -- Options
     ui = {
