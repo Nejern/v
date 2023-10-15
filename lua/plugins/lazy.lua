@@ -122,9 +122,12 @@ require("lazy").setup(
         require("nvim-tree").setup {}
       end,
     },
-    {
+    { -- Project warnings
       "folke/trouble.nvim",
       dependencies = { "kyazdani42/nvim-web-devicons" },
+    },
+    { -- Project structure
+      "preservim/tagbar"
     },
   },
   { -- Options

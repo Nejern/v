@@ -15,3 +15,6 @@ tm('<Esc>', '<C-\\><C-n>:q<CR>')
 
 -- nvim-tree
 nm('<C-w>t', '<cmd>NvimTreeToggle<CR>')
+
+-- tagbar
+nm('<F8>', '<cmd>TagbarToggle<CR>')
