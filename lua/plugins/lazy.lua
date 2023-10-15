@@ -86,6 +86,16 @@ require("lazy").setup(
       dependencies = {
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+        { -- null-ls
+          "jay-babu/mason-null-ls.nvim",
+          event = { "BufReadPre", "BufNewFile" },
+          dependencies = {
+            "jose-elias-alvarez/null-ls.nvim",
+          },
+          config = function()
+            require("plugins.null-ls")
+          end,
+        },
       },
       config = function()
         require("plugins.lspconfig")
@@ -110,13 +120,20 @@ require("lazy").setup(
     },
     { -- Rust crates support
       "saecki/crates.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "jose-elias-alvarez/null-ls.nvim",
+      },
       config = function()
         require("crates").setup({
           src = {
             cmp = {
               enabled = true,
             },
+          },
+          null_ls = {
+            enabled = true,
+            name = "crates.nvim",
           },
         })
       end,
