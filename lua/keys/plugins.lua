@@ -6,6 +6,7 @@ g.mapleader = ' '
 nm('K', '<cmd>lua vim.lsp.buf.hover()<CR>')          -- Hover for object
 nm('<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>') -- Format document
 nm('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')   -- Code actions
+nm('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')    -- Hover for object
 nm('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')        -- Rename object
 
 -- FloaTerm configuration
