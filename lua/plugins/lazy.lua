@@ -77,7 +77,7 @@ require("lazy").setup(
     },
     { -- Indent animation
       "echasnovski/mini.indentscope",
-      version = false, -- wait till new 0.7.0 release to put it back on semver
+      version = false,
       event = "VeryLazy",
       opts = {
         -- symbol = "▏",
@@ -222,6 +222,10 @@ require("lazy").setup(
     { -- Project structure
       "preservim/tagbar"
     },
+    { -- Search
+      "nvim-telescope/telescope.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+    }
   },
   { -- Options
     ui = {
