@@ -132,7 +132,7 @@ require("lazy").setup(
         require("nvim-autopairs").setup()
       end,
     },
-    {
+    { -- Surround
       "tpope/vim-surround",
     },
 
@@ -204,7 +204,7 @@ require("lazy").setup(
     { -- Terminal window
       "voldikss/vim-floaterm",
     },
-    {
+    { -- File explorer
       "nvim-tree/nvim-tree.lua",
       version = "*",
       lazy = false,
