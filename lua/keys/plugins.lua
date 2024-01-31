@@ -20,6 +20,9 @@ NM('<C-w>t', '<cmd>NvimTreeToggle<CR>')
 -- tagbar
 NM('<F8>', '<cmd>TagbarToggle<CR>')
 
+-- Trouble
+NM('<F7>', '<cmd>TroubleToggle<CR>')
+
 -- Telescope
 NM('<leader>tf', '<cmd>Telescope find_files<CR>')
 NM('<leader>tg', '<cmd>Telescope live_grep<CR>')
