@@ -1,3 +1,5 @@
+-- [[ Filetype ]] --
+
 --g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 vim.filetype.add({

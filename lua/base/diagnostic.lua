@@ -1,3 +1,5 @@
+-- [[ Diagnostic ]] --
+
 local sign = function(opts)
   vim.fn.sign_define(opts.name, {
     texthl = opts.name,

@@ -1,4 +1,5 @@
 -- [[ Colorscheme ]] --
+
 opt.termguicolors = true                  -- Enable true colors
 opt.background = "dark"                   -- Dark background
 

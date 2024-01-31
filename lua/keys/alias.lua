@@ -1,23 +1,21 @@
 -- [[ Variables ]] --
+
 local map = vim.api.nvim_set_keymap
 
 -- [[ Functions ]] --
--- Normal mode
-function nm(key, command)
+
+function NM(key, command) -- Normal mode
   map('n', key, command, { noremap = true, silent = true })
 end
 
--- Insert mode
-function im(key, command)
+function IM(key, command) -- Insert mode
   map('i', key, command, { noremap = true, silent = true })
 end
 
--- Visual mode
-function vm(key, command)
+function VM(key, command) -- Visual mode
   map('v', key, command, { noremap = true, silent = true })
 end
 
--- Terminal mode
-function tm(key, command)
+function TM(key, command) -- Terminal mode
   map('t', key, command, { noremap = true, silent = true })
 end
