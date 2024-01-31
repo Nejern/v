@@ -53,5 +53,12 @@ vim.filetype.add({
       opt.shiftwidth = 2
       return "hcl"
     end,
+    -- [[ JS ]] --
+    ["js"] = function()
+      opt.expandtab = true
+      opt.tabstop = 4
+      opt.shiftwidth = 4
+      return "javascript"
+    end,
   },
 })
