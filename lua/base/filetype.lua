@@ -27,9 +27,9 @@ vim.filetype.add({
     end,
     -- [[ Go ]] --
     ["go"] = function()
-      opt.expandtab = true
-      opt.tabstop = 2
-      opt.shiftwidth = 2
+      opt.expandtab = false
+      opt.tabstop = 4
+      opt.shiftwidth = 4
       return "go"
     end,
     -- [[ HTML ]] --
@@ -38,6 +38,20 @@ vim.filetype.add({
       opt.tabstop = 4
       opt.shiftwidth = 4
       return "html"
+    end,
+    -- [[ Terraform ]] --
+    ["tf"] = function()
+      opt.expandtab = true
+      opt.tabstop = 2
+      opt.shiftwidth = 2
+      return "terraform"
+    end,
+    -- [[ Terragrunt ]] --
+    ["hcl"] = function()
+      opt.expandtab = true
+      opt.tabstop = 2
+      opt.shiftwidth = 2
+      return "hcl"
     end,
   },
 })
