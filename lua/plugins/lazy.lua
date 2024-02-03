@@ -49,6 +49,9 @@ require("lazy").setup(
         require("plugins.todo-comments")
       end
     },
+    { -- UI
+      "stevearc/dressing.nvim"
+    },
 
     -- Completion --
     { -- Completion framework:

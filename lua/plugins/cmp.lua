@@ -1,3 +1,4 @@
+local WIDE_HEIGHT = 40
 local cmp = require('cmp')
 cmp.setup({
   -- Enable LSP snippets
@@ -40,8 +41,20 @@ cmp.setup({
   },
   -- Window options
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered({
+      --border = { '', '', '', '', '', '', '', '' },
+      winhighlight = 'Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None',
+      scrolloff = 0,
+      col_offset = 0,
+      side_padding = 1,
+      scrollbar = true,
+    }),
+    documentation = cmp.config.window.bordered({
+      max_height = math.floor(WIDE_HEIGHT * (WIDE_HEIGHT / vim.o.lines)),
+      max_width = math.floor((WIDE_HEIGHT * 2) * (vim.o.columns / (WIDE_HEIGHT * 2 * 16 / 9))),
+      border = { '', '', '', ' ', '', '', '', ' ' },
+      winhighlight = 'FloatBorder:NormalFloat',
+    }),
   },
   -- Use buffer source for `/` and `?` (if enabled `native_menu`, this won't work anymore)
   cmp.setup.cmdline({ '/', '?' }, {
