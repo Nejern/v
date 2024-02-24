@@ -173,6 +173,9 @@ require("lazy").setup(
     { -- Search
       "nvim-telescope/telescope.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require('plugins.telescope')
+      end,
     },
     { -- Git decorations
       "lewis6991/gitsigns.nvim",
