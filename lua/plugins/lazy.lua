@@ -83,6 +83,13 @@ require("lazy").setup(
     { -- Surround
       "tpope/vim-surround",
     },
+    { -- Copilot
+      "zbirenbaum/copilot.lua",
+      event = "VeryLazy",
+      config = function()
+        require("plugins.copilot")
+      end,
+    },
 
     -- LSP --
     { -- Mason
