@@ -63,4 +63,13 @@ vim.filetype.add({
       return "javascript"
     end,
   },
+  filename = {
+    -- [[ Jenkinsfile ]] --
+    ["Jenkinsfile"] = function()
+      opt.expandtab = true
+      opt.tabstop = 2
+      opt.shiftwidth = 2
+      return "groovy"
+    end,
+  },
 })

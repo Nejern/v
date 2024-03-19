@@ -10,12 +10,11 @@ opt = vim.opt
 g = vim.g
 
 -- [[ Plugins ]] --
-require('plugins.lazy')
+require('plugins')
 
 -- [[ Options ]] --
 require('base.filetype')    -- Filetype
 require('base.appearance')  -- Appearance
-require('base.colorscheme') -- Colorscheme
 require('base.search')      -- Search
 require('base.cursor')      -- Cursor
 require('base.window')      -- Window
