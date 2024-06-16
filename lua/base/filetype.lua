@@ -72,4 +72,9 @@ vim.filetype.add({
       return "groovy"
     end,
   },
+  pattern = {
+    [".*/templates/.*%.html"] = function()
+      return "htmldjango"
+    end,
+  },
 })
