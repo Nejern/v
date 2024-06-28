@@ -25,18 +25,18 @@ require("lazy").setup(
   {
     -- Appearance --
     require("plugins.gruvbox-material"), -- Theme
-    require("plugins.transparent"),      -- Transparent window
-    require("plugins.lualine"),          -- Statusline
-    require("plugins.numbertoggle"),     -- Numbertoggle
-    require("plugins.illuminate"),       -- Highlighting word uses
-    require("plugins.todo-comments"),    -- Todo comments
-    require("plugins.dressing"),         -- UI
-    require("plugins.indent"),           -- UI
+    require("plugins.transparent"),    -- Transparent window
+    require("plugins.lualine"),        -- Statusline
+    require("plugins.numbertoggle"),   -- Numbertoggle
+    require("plugins.illuminate"),     -- Highlighting word uses
+    require("plugins.todo-comments"),  -- Todo comments
+    require("plugins.dressing"),       -- UI
+    require("plugins.indent"),         -- UI
 
     -- Completion --
-    require("plugins.cmp"),       -- Completion framework
+    require("plugins.cmp"),     -- Completion framework
     require("plugins.autopairs"), -- Autopairs
-    require("plugins.surround"),  -- Surround
+    require("plugins.surround"), -- Surround
     --require("plugins.copilot"),   -- Copilot
 
     -- LSP --
@@ -46,14 +46,15 @@ require("lazy").setup(
     require("plugins.treesitter"), -- TreeSitter
 
     -- Other --
-    require("plugins.suda"),      -- Sudo interactions
-    require("plugins.rust"),      -- rust-tools
-    require("plugins.crates"),    -- Rust crates support
-    require("plugins.tree"),      -- File explorer
-    require("plugins.trouble"),   -- Project warnings
-    require("plugins.tagbar"),    -- Project structure
-    require("plugins.telescope"), -- Search
-    require("plugins.gitsigns"),  -- Git decorations
+    require("plugins.suda"),        -- Sudo interactions
+    require("plugins.rust"),        -- rust-tools
+    require("plugins.flutter-tools"), -- flutter-tools
+    require("plugins.crates"),      -- Rust crates support
+    require("plugins.tree"),        -- File explorer
+    require("plugins.trouble"),     -- Project warnings
+    require("plugins.tagbar"),      -- Project structure
+    require("plugins.telescope"),   -- Search
+    require("plugins.gitsigns"),    -- Git decorations
   },
 
   { -- Options
