@@ -55,6 +55,7 @@ require("lazy").setup(
     require("plugins.tagbar"),      -- Project structure
     require("plugins.telescope"),   -- Search
     require("plugins.gitsigns"),    -- Git decorations
+    require("plugins.workspaces"),  -- Workspaces
   },
 
   { -- Options

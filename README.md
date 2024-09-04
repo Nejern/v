@@ -67,3 +67,4 @@ My [Neovim](https://neovim.io/) config
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [tagbar](https://github.com/preservim/tagbar)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [workspaces.nvim](https://github.com/natecraddock/workspaces.nvim)
