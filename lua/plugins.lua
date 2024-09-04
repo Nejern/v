@@ -56,6 +56,7 @@ require("lazy").setup(
     require("plugins.telescope"),   -- Search
     require("plugins.gitsigns"),    -- Git decorations
     require("plugins.workspaces"),  -- Workspaces
+    require("plugins.possession"),  -- Sessions
   },
 
   { -- Options
