@@ -37,7 +37,7 @@ require("lazy").setup(
     require("plugins.cmp"),     -- Completion framework
     require("plugins.autopairs"), -- Autopairs
     require("plugins.surround"), -- Surround
-    --require("plugins.copilot"),   -- Copilot
+    --require("plugins.copilot"), -- Copilot
 
     -- LSP --
     require("plugins.lsp"),
