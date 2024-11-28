@@ -63,18 +63,20 @@ vim.filetype.add({
       return "javascript"
     end,
   },
-  filename = {
+  --filename = {},
+  pattern = {
+    [".*/templates/.*%.html"] = function()
+      return "htmldjango"
+    end,
     -- [[ Jenkinsfile ]] --
-    ["Jenkinsfile"] = function()
+    ["Jenkinsfile.*"] = function()
       opt.expandtab = true
       opt.tabstop = 2
       opt.shiftwidth = 2
       return "groovy"
     end,
-  },
-  pattern = {
-    [".*/templates/.*%.html"] = function()
-      return "htmldjango"
+    [".*/playbooks/.*%.y[a]*ml"] = function()
+      return "yaml.ansible"
     end,
   },
 })
