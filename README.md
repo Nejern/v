@@ -48,7 +48,7 @@ My [Neovim](https://neovim.io/) config
 - [Mason lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [LSP config](https://github.com/neovim/nvim-lspconfig)
 - [Mason null-ls](https://github.com/jay-babu/mason-null-ls.nvim)
-- [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- [none-ls](https://github.com/nvimtools/none-ls.nvim)
 - [Mason DAP](https://github.com/jay-babu/mason-nvim-dap.nvim)
 - [DAP](https://github.com/mfussenegger/nvim-dap)
 

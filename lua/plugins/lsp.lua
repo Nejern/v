@@ -3,14 +3,14 @@ return {
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    { -- null-ls
+    { -- null-ls/none-ls
       "jay-babu/mason-null-ls.nvim",
       event = { "BufReadPre", "BufNewFile" },
       dependencies = {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
       },
       config = function()
-        require("plugins.null-ls")
+        require("null-ls").setup()
       end,
     },
     { -- DAP
@@ -30,7 +30,7 @@ return {
           package_uninstalled = "",
         },
         border = "rounded",
-      }
+      },
     })
 
     -- mason-null-ls
@@ -51,10 +51,10 @@ return {
     require("mason-lspconfig").setup_handlers({
       function(server_name)
         require("lspconfig")[server_name].setup({
-          capabilities = require('cmp_nvim_lsp').default_capabilities(),
+          capabilities = require("cmp_nvim_lsp").default_capabilities(),
           settings = {
             Lua = {
-              diagnostics = { globals = { 'vim' } },
+              diagnostics = { globals = { "vim" } },
             },
           },
         })
@@ -62,18 +62,13 @@ return {
       -- Next, you can provide a dedicated handler for specific servers.
       -- For example, a handler override for the `rust_analyzer`:
       ["rust_analyzer"] = function()
-        require("rust-tools").setup {}
-      end
+        require("rust-tools").setup({})
+      end,
     })
 
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-      vim.lsp.handlers.hover,
-      { border = 'rounded' }
-    )
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-      vim.lsp.handlers.signature_help,
-      { border = 'rounded' }
-    )
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+        vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
   end,
 }
