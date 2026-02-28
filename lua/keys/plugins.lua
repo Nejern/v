@@ -15,7 +15,7 @@ NM('gR', '<cmd>lua vim.lsp.buf.rename()<CR>')        -- Rename object
 --TM('<Esc>', '<C-\\><C-n>:q<CR>')
 
 -- nvim-tree
-NM('<C-w>t', '<cmd>NvimTreeToggle<CR>')
+NM('<C-w>t', '<cmd>lua Snacks.explorer.open()<CR>')
 
 -- tagbar
 NM('<F8>', '<cmd>TagbarToggle<CR>')

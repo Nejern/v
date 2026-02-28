@@ -50,13 +50,14 @@ require("lazy").setup(
     require("plugins.rust"),        -- rust-tools
     require("plugins.flutter-tools"), -- flutter-tools
     require("plugins.crates"),      -- Rust crates support
-    require("plugins.tree"),        -- File explorer
+    --require("plugins.tree"),        -- File explorer
     require("plugins.trouble"),     -- Project warnings
     require("plugins.tagbar"),      -- Project structure
     require("plugins.telescope"),   -- Search
     require("plugins.gitsigns"),    -- Git decorations
     require("plugins.workspaces"),  -- Workspaces
     require("plugins.possession"),  -- Sessions
+    require("plugins.snacks"),      -- Some QoL
   },
 
   { -- Options
