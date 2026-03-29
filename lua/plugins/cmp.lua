@@ -139,12 +139,5 @@ return {
       vim.api.nvim_buf_set_option(buf, "omnifunc", "v:lua.vim.lsp.omnifunc")
       vim.api.nvim_buf_set_option(buf, "tagfunc", "v:lua.vim.lsp.tagfunc")
     end
-
-    require("rust-tools").setup({
-      server = {
-        capabilities = capabilities,
-        on_attach = lsp_attach,
-      }
-    })
   end,
 }

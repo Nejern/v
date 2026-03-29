@@ -48,7 +48,7 @@ require("lazy").setup(
     -- Other --
     require("plugins.suda"),        -- Sudo interactions
     require("plugins.rust"),        -- rust-tools
-    require("plugins.flutter-tools"), -- flutter-tools
+    --require("plugins.flutter-tools"), -- flutter-tools
     require("plugins.crates"),      -- Rust crates support
     require("plugins.tree"),        -- File explorer
     require("plugins.trouble"),     -- Project warnings

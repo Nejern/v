@@ -47,7 +47,6 @@ My [Neovim](https://neovim.io/) config
 - [Mason](https://github.com/williamboman/mason.nvim)
 - [Mason lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [LSP config](https://github.com/neovim/nvim-lspconfig)
-- [Mason null-ls](https://github.com/jay-babu/mason-null-ls.nvim)
 - [none-ls](https://github.com/nvimtools/none-ls.nvim)
 - [Mason DAP](https://github.com/jay-babu/mason-nvim-dap.nvim)
 - [DAP](https://github.com/mfussenegger/nvim-dap)
@@ -59,7 +58,7 @@ My [Neovim](https://neovim.io/) config
 ### Other
 
 - [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim)
-- [rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim)
+- [rustaceanvim](https://github.com/mrcjkb/rustaceanvim)
 - [crates.nvim](https://github.com/saecki/crates.nvim)
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
