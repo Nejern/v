@@ -1,15 +1,23 @@
 return {
   "saecki/crates.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvimtools/none-ls.nvim",
+  tag = "stable",
+  event = {
+    "BufRead Cargo.toml",
+    "BufNewFile Cargo.toml",
   },
-  config = function()
-    require("crates").setup({
-      null_ls = {
+  opts = {
+    lsp = {
+      enabled = true,
+      actions = true,
+      completion = true,
+      hover = true,
+    },
+    completion = {
+      crates = {
         enabled = true,
-        name = "crates.nvim",
+        min_chars = 3,
+        max_results = 8,
       },
-    })
-  end,
+    },
+  },
 }
