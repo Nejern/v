@@ -22,6 +22,7 @@ require('base.panels')      -- Panels
 require('base.tabs')        -- Tabs
 require('base.completion')  -- Completion
 require('base.diagnostic')  -- Diagnostic
+require('base.clipboard')   -- Clipboard
 require('base.other')       -- Other
 
 -- [[ Hotkeys ]] --
