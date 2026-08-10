@@ -57,6 +57,7 @@ require("lazy").setup(
     require("plugins.gitsigns"),    -- Git decorations
     require("plugins.workspaces"),  -- Workspaces
     require("plugins.possession"),  -- Sessions
+    require("plugins.snacks"),      -- Some QoL
   },
 
   { -- Options
