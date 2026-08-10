@@ -30,18 +30,18 @@ return {
 		},
 		dashboard = { enabled = true },
 		explorer = {
-			enabled = true,
+			enabled = false,
 			replace_netrw = true, -- Replace netrw with the snacks explorer
 			trash = false, -- Use the system trash when deleting files
 		},
-		indent = { enabled = true },
+		indent = { enabled = false },
 		input = { enabled = true },
-		picker = { enabled = true },
+		picker = { enabled = false },
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
-		scope = { enabled = true },
-		scroll = { enabled = true },
-		statuscolumn = { enabled = true },
-		words = { enabled = true },
+		scope = { enabled = false },
+		scroll = { enabled = false },
+		statuscolumn = { enabled = false },
+		words = { enabled = false },
 	},
 }
