@@ -1,59 +1,82 @@
+local ensure_installed = {
+  "lua",
+  "markdown",
+  "markdown_inline",
+  "rust",
+  "toml",
+}
+
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "main",
+  lazy = false,
   build = ":TSUpdate",
   config = function()
-    require('nvim-treesitter.configs').setup {
-      -- A list of parser names, or "all" (the five listed parsers should always be installed)
-      ensure_installed = { "lua", "rust", "toml" },
+    local treesitter = require("nvim-treesitter")
 
-      -- Install parsers synchronously (only applied to `ensure_installed`)
-      sync_install = false,
+    -- The main branch is a full rewrite. Avoid calling its API while lazy.nvim
+    -- is still using the old locked revision during the first plugin sync.
+    if not treesitter.install then
+      vim.notify("Run :Lazy sync to migrate nvim-treesitter to its main branch", vim.log.levels.WARN)
+      return
+    end
 
-      -- Automatically install missing parsers when entering buffer
-      -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-      auto_install = true,
+    local max_filesize = 100 * 1024 -- 100 KB
 
-      -- List of parsers to ignore installing (or "all")
-      -- ignore_install = { "javascript" },
+    local function start(buf)
+      if not vim.api.nvim_buf_is_valid(buf) or vim.bo[buf].buftype ~= "" then
+        return
+      end
 
-      ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-      -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+      local filename = vim.api.nvim_buf_get_name(buf)
+      local stats = filename ~= "" and vim.uv.fs_stat(filename) or nil
+      if stats and stats.size > max_filesize then
+        return
+      end
 
-      highlight = {
-        enable = true,
+      local lang = vim.treesitter.language.get_lang(vim.bo[buf].filetype)
+      if not lang then
+        return
+      end
 
-        -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-        -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-        -- the name of the parser)
-        -- list of language that will be disabled
-        -- disable = { "c", "rust" },
-        -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-        disable = function(lang, buf)
-          local max_filesize = 100 * 1024 -- 100 KB
-          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-          if ok and stats and stats.size > max_filesize then
-            return true
+      local ok, loaded = pcall(vim.treesitter.language.add, lang)
+      if not ok or not loaded then
+        return
+      end
+
+      if not vim.treesitter.highlighter.active[buf] then
+        vim.treesitter.start(buf, lang)
+      end
+
+      for _, win in ipairs(vim.fn.win_findbuf(buf)) do
+        vim.wo[win].foldmethod = "expr"
+        vim.wo[win].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        vim.wo[win].foldenable = false
+      end
+    end
+
+    local group = vim.api.nvim_create_augroup("treesitter-highlight", { clear = true })
+    vim.api.nvim_create_autocmd("FileType", {
+      group = group,
+      callback = function(args)
+        start(args.buf)
+      end,
+    })
+
+    -- Install the configured parsers asynchronously, then enable highlighting
+    -- for buffers that were opened while installation was in progress.
+    treesitter.install(ensure_installed):await(function(err, installed)
+      if err or not installed then
+        return
+      end
+
+      vim.schedule(function()
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_loaded(buf) then
+            start(buf)
           end
-        end,
-
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
-      },
-
-      ident = { enable = true },
-      rainbow = {
-        enable = true,
-        extended_mode = true,
-        max_file_lines = nil,
-      },
-    }
-
-    -- Treesitter folding
-    vim.wo.foldmethod = 'expr'
-    vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-    vim.cmd("set nofoldenable")
+        end
+      end)
+    end)
   end,
 }
